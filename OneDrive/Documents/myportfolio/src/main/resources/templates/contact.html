@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact</title>
+  
+  <link rel="icon" type="image/jpeg" th:href="@{/images/fevical.WEBP}" />
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <h2 class="navbar-title">Portfolio</h2> <!-- Added title -->
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a th:href="@{/}">Home</a></li>
+      <li><a th:href="@{/about}">About</a></li>
+      <li><a th:href="@{/project}">Project</a></li>
+      <li><a th:href="@{/resume}">Resume</a></li>
+      <li><a th:href="@{/contact}" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contact Section -->
+  <section id="contact" class="about-section">
+    <div class="form-container">
+      <h2>Contact Us</h2>
+
+      <!-- Bind form to Contact object -->
+      <form th:action="@{/submit}" th:object="${contact}" method="post">
+
+          <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" th:field="*{name}" placeholder="Enter your name" required>
+          </div>
+
+          <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" th:field="*{email}" placeholder="Enter your email" required>
+          </div>
+
+          <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea id="message" th:field="*{message}" placeholder="Write your message here..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <script th:src="@{/js/script.js}"></script>
+</body>
+</html>

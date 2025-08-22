@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume</title>
+  <link rel="icon" type="image/jpeg" th:href="@{/images/fevical.WEBP}" />
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <h2 class="navbar-title">Portfolio</h2> <!-- Added title -->
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a th:href="@{/}" class="active">Home</a></li>
+      <li><a th:href="@{/about}">About</a></li>
+      <li><a th:href="@{/project}">Project</a></li>
+      <li><a th:href="@{/resume}">Resume</a></li>
+      <li><a th:href="@{/contact}">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Resume Content -->
+  <section class="resume-section">
+    <div class="resume-container">
+      <h1>My Resume</h1>
+      <a th:href="@{/RaghavendraTunkarapalli.pdf}" download class="download-btn">Download Resume</a>
+    </div>
+  </section>
+
+  <!-- External JavaScript -->
+  <script th:src="@{/js/script.js}"></script>
+</body>
+</html>

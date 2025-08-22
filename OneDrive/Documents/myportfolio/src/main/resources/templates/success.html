@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Success</title>
+</head>
+<body>
+    <h2>✅ Thank you, <span th:text="${name}"></span>! Your message has been saved.</h2>
+
+    <!-- Back button to contact page -->
+    <a th:href="@{/contact}">Back to Contact</a>
+</body>
+</html>

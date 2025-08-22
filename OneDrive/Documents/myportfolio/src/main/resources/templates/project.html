@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project</title>
+  <link rel="icon" type="image/jpeg" th:href="@{/images/fevical.WEBP}" />
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <h2 class="navbar-title">Portfolio</h2> <!-- Added title -->
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a th:href="@{/}" class="active">Home</a></li>
+      <li><a th:href="@{/about}">About</a></li>
+      <li><a th:href="@{/project}">Project</a></li>
+      <li><a th:href="@{/resume}">Resume</a></li>
+      <li><a th:href="@{/contact}">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Project Section -->
+  <!--  Main Section Title -->
+  <h1 class="project-heading">My Project</h1>
+
+<!-- 📦 Project Card -->
+<div class="project-card">
+  <h2>My Portfolio Website</h2>
+  <p>This project is built using HTML, CSS, JavaScript, and Spring Boot. It includes dynamic pages and Excel-integrated contact form.</p>
+  <a th:href="@{ / }" class="btn">View Code</a>
+</div>
+
+
+  <script th:src="@{/js/script.js}"></script>
+</body>
+</html>
