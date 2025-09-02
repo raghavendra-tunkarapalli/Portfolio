@@ -11,7 +11,7 @@
 
   <!-- Navigation Bar -->
   <nav class="navbar">
-    <h2 class="navbar-title">Portfolio</h2> <!-- Added title -->
+    <h2 class="navbar-title">Raghavendra Tunkarapalli</h2> <!-- Added title -->
     <div class="hamburger" id="hamburger">&#9776;</div>
     <ul class="nav-menu" id="nav-menu">
       <li><a th:href="@{/}" class="active">Home</a></li>
@@ -29,6 +29,22 @@
       <a th:href="@{/RaghavendraTunkarapalli.pdf}" download class="download-btn">Download Resume</a>
     </div>
   </section>
+
+<!-- footer section -->
+  <div class="container">
+  <footer class="footer">
+    <p class="mb-0">
+      Copyright 
+      <script>document.write(new Date().getFullYear())</script> &copy; 
+      <a th:href="@{/}" target="_blank">Tunkarapalli Raghu</a>. 
+      All Rights Reserved.
+    </p>
+    <div class="social-links">
+      <a href="https://github.com/raghavendra-tunkarapalli" class="link" aria-label="github" target="_blank">GH</a>
+      <a href="https://www.linkedin.com/in/raghavendra-tunkarapalli/" class="link" aria-label="linkedin" target="_blank">IN</a>
+    </div>
+  </footer>
+</div>
 
   <!-- External JavaScript -->
   <script th:src="@{/js/script.js}"></script>

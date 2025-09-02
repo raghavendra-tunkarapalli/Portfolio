@@ -12,7 +12,7 @@
 
   <!-- Navigation Bar -->
   <nav class="navbar">
-    <h2 class="navbar-title">Portfolio</h2> <!-- Added title -->
+    <h2 class="navbar-title">Raghavendra Tunkarapalli</h2> <!-- Added title -->
     <div class="hamburger" id="hamburger">&#9776;</div>
     <ul class="nav-menu" id="nav-menu">
       <li><a th:href="@{/}" class="active">Home</a></li>
@@ -30,18 +30,15 @@
         <h2>Hello,</h2>
         <h1>I AM RAGHU</h1>
         <p>An engineering student</p>
-        <div class="social-links">
-          <div class="social-links1">
-            <a href="https://github.com/raghavendra-tunkarapalli" target="_blank" aria-label="GitHub">
-              <img th:src="@{/images/github.png}" alt="GitHub" class="github-icon">
-            </a>
-          </div>
-          <div class="social-links2">
-            <a href="https://www.linkedin.com/in/raghavendra-tunkarapalli/" target="_blank" aria-label="LinkedIn">
-              <img th:src="@{/images/linkedin.webp}" alt="LinkedIn" class="linkedin-icon">
-            </a>
-          </div>
-        </div>
+<div class="social-links-main">
+  <div class="social-links1">
+    <img th:src="@{/images/github.png}" alt="GitHub" class="github-icon">
+  </div>
+  <div class="social-links2">
+    <img th:src="@{/images/linkedin.webp}" alt="LinkedIn" class="linkedin-icon">
+  </div>
+</div>
+
       </div>
 
       <!-- Updated hero image wrapper for blob effect -->
@@ -51,111 +48,45 @@
     </div>
   </section>
 
-  
-
-  <!-- About Section -->
-  <section id="about" class="index-about-section">
-    <div class="index-about-container">
-      <h2>Who am I</h2>
+    <!-- About Section -->
+  <section class="index-first-section">
+    <div class="index-first-container">
+      <div class="index-left">
+        <img th:src="@{/images/index-image1.png}" alt="About Illustration" />
+      </div>
+      <div class="index-right">
+        <h2>LET’S<br><span>INTRODUCE ABOUT<br>MYSELF</span></h2>
         <p>
-          I am an engineering student with a solid foundation in Java, Data Structures & Algorithms, and web development. I have practical experience in building web applications and continuously enhance my skills through projects and hands-on learning.
+          I'm an engineering student passionate about software development and user experience.
+          I love building modern web apps and exploring new technologies.
         </p>
-        <div class="skills-section">
-  <!-- Hard Skills (Left) -->
-  <div class="hard-skill-container">
-    <h3>Hard Skills</h3>
-    <p class="hard-skill-name">Java</p>
-    <div class="hard-skill-bar">
-      <div class="hard-skill-fill" style="width: 80%;">
-        <span class="hard-skill-percent">80%</span>
+        <p>
+          I enjoy solving problems, contributing to projects, and constantly improving my skills in frontend and backend development
+          <a th:href="@{/about}">...about</a>
+        </p>
+        <a th:href="@{/RaghavendraTunkarapalli.pdf}" download class="btn-download">
+          DOWNLOAD RESUME
+        </a>
       </div>
-    </div>
-
-    <p class="hard-skill-name">Spring Boot</p>
-    <div class="hard-skill-bar">
-      <div class="hard-skill-fill" style="width: 70%;">
-        <span class="hard-skill-percent">70%</span>
-      </div>
-    </div>
-
-    <p class="hard-skill-name">HTML</p>
-    <div class="hard-skill-bar">
-      <div class="hard-skill-fill" style="width: 70%;">
-        <span class="hard-skill-percent">70%</span>
-      </div>
-    </div>
-
-    <p class="hard-skill-name">CSS</p>
-    <div class="hard-skill-bar">
-      <div class="hard-skill-fill" style="width: 60%;">
-        <span class="hard-skill-percent">60%</span>
-      </div>
-    </div>
-
-    <p class="hard-skill-name">JavaScript</p>
-    <div class="hard-skill-bar">
-      <div class="hard-skill-fill" style="width: 70%;">
-        <span class="hard-skill-percent">70%</span>
-      </div>
-    </div>
-    <p class="hard-skill-name">MySQL</p>
-    <div class="hard-skill-bar">
-      <div class="hard-skill-fill" style="width: 70%;">
-        <span class="hard-skill-percent">70%</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Soft Skills (Right) -->
-  <div class="soft-skill-container">
-    <h3>Soft Skills</h3>
-    <p class="soft-skill-name">Communication</p>
-    <div class="soft-skill-bar">
-      <div class="soft-skill-fill" style="width: 70%;">
-        <span class="soft-skill-percent">70%</span>
-      </div>
-    </div>
-
-    <p class="soft-skill-name">Teamwork</p>
-    <div class="soft-skill-bar">
-      <div class="soft-skill-fill" style="width: 70%;">
-        <span class="soft-skill-percent">70%</span>
-      </div>
-    </div>
-
-    <p class="soft-skill-name">Problem Solving</p>
-    <div class="soft-skill-bar">
-      <div class="soft-skill-fill" style="width: 75%;">
-        <span class="soft-skill-percent">75%</span>
-      </div>
-    </div>
-
-    <p class="soft-skill-name">Creativity</p>
-    <div class="soft-skill-bar">
-      <div class="soft-skill-fill" style="width: 80%;">
-        <span class="soft-skill-percent">80%</span>
-      </div>
-    </div>
-
-    <p class="soft-skill-name">Adaptability</p>
-    <div class="soft-skill-bar">
-      <div class="soft-skill-fill" style="width: 70%;">
-        <span class="soft-skill-percent">70%</span>
-      </div>
-    </div>
-    <p class="soft-skill-name">Time management</p>
-    <div class="soft-skill-bar">
-      <div class="soft-skill-fill" style="width: 70%;">
-        <span class="soft-skill-percent">70%</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-      
     </div>
   </section>
+
+<!-- footer section -->
+  <div class="container">
+  <footer class="footer">
+    <p class="mb-0">
+      Copyright 
+      <script>document.write(new Date().getFullYear())</script> &copy; 
+      <a th:href="@{/}" target="_blank">Tunkarapalli Raghu</a>. 
+      All Rights Reserved.
+    </p>
+    <div class="social-links">
+      <a href="https://github.com/raghavendra-tunkarapalli" class="link" aria-label="github" target="_blank">GH</a>
+      <a href="https://www.linkedin.com/in/raghavendra-tunkarapalli/" class="link" aria-label="linkedin" target="_blank">IN</a>
+    </div>
+  </footer>
+</div>
+
 
   <!-- Link to External JavaScript File -->
   <script th:src="@{/js/script.js}"></script>
