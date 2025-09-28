@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  
+   <link rel="icon" type="image/jpeg" th:href="@{/images/fevical.WEBP}" />
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <h2 class="navbar-title">Raghavendra Tunkarapalli</h2> <!-- Added title -->
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a th:href="@{/}" class="active">Home</a></li>
+      <li><a th:href="@{/about}">About</a></li>
+      <li><a th:href="@{/project}">Project</a></li>
+      <li><a th:href="@{/resume}">Resume</a></li>
+      <li><a th:href="@{/contact}">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="main-section">
+    <div class="hero-container">
+      <div class="main-text">
+        <h2>Hello,</h2>
+        <h1>I AM RAGHU</h1>
+        <p>An engineering student</p>
+<div class="social-links-main">
+  <div class="social-links1">
+    <a href="https://github.com/raghavendra-tunkarapalli" target="_blank" aria-label="GitHub">
+      <img th:src="@{/images/github.png}" alt="GitHub" class="github-icon">
+    </a>
+  </div>
+  <div class="social-links2">
+     <a href="https://www.linkedin.com/in/raghavendra-tunkarapalli/" target="_blank" aria-label="LinkedIn">
+    <img th:src="@{/images/linkedin.webp}" alt="LinkedIn" class="linkedin-icon">
+    </a>
+  </div>
+</div>
+
+      </div>
+
+      <!-- Updated hero image wrapper for blob effect -->
+      <div class="hero-image-wrapper">
+        <img th:src="@{/images/index-main-image.png}" alt="Hero Image" class="hero-image" />
+      </div>
+    </div>
+  </section>
+
+    <!-- About Section -->
+  <section class="index-first-section">
+    <div class="index-first-container">
+      <div class="index-left">
+        <img th:src="@{/images/index-image1.png}" alt="About Illustration" />
+      </div>
+      <div class="index-right">
+        <h2>LET’S<br><span>INTRODUCE ABOUT<br>MYSELF</span></h2>
+        <p>
+          I'm an engineering student passionate about software development and user experience.
+          I love building modern web apps and exploring new technologies.
+        </p>
+        <p>
+          I enjoy solving problems, contributing to projects, and constantly improving my skills in frontend and backend development
+          <a th:href="@{/about}">...about</a>
+        </p>
+        <a th:href="@{/RaghavendraTunkarapalli.pdf}" download class="btn-download">
+          DOWNLOAD RESUME
+        </a>
+      </div>
+    </div>
+  </section>
+
+<!-- footer section -->
+  <div class="container">
+  <footer class="footer">
+    <p class="mb-0">
+      Copyright 
+      <script>document.write(new Date().getFullYear())</script> &copy; 
+      <a th:href="@{/}" target="_blank">Tunkarapalli Raghu</a>. 
+      All Rights Reserved.
+    </p>
+    <div class="social-links">
+      <a href="https://github.com/raghavendra-tunkarapalli" class="link" aria-label="github" target="_blank">GH</a>
+      <a href="https://www.linkedin.com/in/raghavendra-tunkarapalli/" class="link" aria-label="linkedin" target="_blank">IN</a>
+    </div>
+  </footer>
+</div>
+
+
+  <!-- Link to External JavaScript File -->
+  <script th:src="@{/js/script.js}"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About</title>
+  <link rel="icon" type="image/webp" th:href="@{/images/fevical.WEBP}" />
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <h2 class="navbar-title">Raghavendra Tunkarapalli</h2> <!-- Added title -->
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a th:href="@{/}" class="active">Home</a></li>
+      <li><a th:href="@{/about}">About</a></li>
+      <li><a th:href="@{/project}">Project</a></li>
+      <li><a th:href="@{/resume}">Resume</a></li>
+      <li><a th:href="@{/contact}">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- About Section -->
+  <section id="about-section" class="about-section">
+    <div class="about-container">
+      <h2>Who am I</h2>
+        <p>
+          I am an engineering student with a solid foundation in Java, Data Structures & Algorithms, and web development. I have practical experience in building web applications and continuously enhance my skills through projects and hands-on learning.
+        </p>
+        <div class="skills-section">
+  <!-- Hard Skills (Left) -->
+  <div class="hard-skill-container">
+    <h3>Hard Skills</h3>
+    <p class="hard-skill-name">Java</p>
+    <div class="hard-skill-bar">
+      <div class="hard-skill-fill" style="width: 80%;">
+        <span class="hard-skill-percent">80%</span>
+      </div>
+    </div>
+
+    <p class="hard-skill-name">Spring Boot</p>
+    <div class="hard-skill-bar">
+      <div class="hard-skill-fill" style="width: 70%;">
+        <span class="hard-skill-percent">70%</span>
+      </div>
+    </div>
+
+    <p class="hard-skill-name">HTML</p>
+    <div class="hard-skill-bar">
+      <div class="hard-skill-fill" style="width: 70%;">
+        <span class="hard-skill-percent">70%</span>
+      </div>
+    </div>
+
+    <p class="hard-skill-name">CSS</p>
+    <div class="hard-skill-bar">
+      <div class="hard-skill-fill" style="width: 60%;">
+        <span class="hard-skill-percent">60%</span>
+      </div>
+    </div>
+
+    <p class="hard-skill-name">JavaScript</p>
+    <div class="hard-skill-bar">
+      <div class="hard-skill-fill" style="width: 70%;">
+        <span class="hard-skill-percent">70%</span>
+      </div>
+    </div>
+    <p class="hard-skill-name">MySQL</p>
+    <div class="hard-skill-bar">
+      <div class="hard-skill-fill" style="width: 70%;">
+        <span class="hard-skill-percent">70%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Soft Skills (Right) -->
+  <div class="soft-skill-container">
+    <h3>Soft Skills</h3>
+    <p class="soft-skill-name">Communication</p>
+    <div class="soft-skill-bar">
+      <div class="soft-skill-fill" style="width: 70%;">
+        <span class="soft-skill-percent">70%</span>
+      </div>
+    </div>
+
+    <p class="soft-skill-name">Teamwork</p>
+    <div class="soft-skill-bar">
+      <div class="soft-skill-fill" style="width: 70%;">
+        <span class="soft-skill-percent">70%</span>
+      </div>
+    </div>
+
+    <p class="soft-skill-name">Problem Solving</p>
+    <div class="soft-skill-bar">
+      <div class="soft-skill-fill" style="width: 75%;">
+        <span class="soft-skill-percent">75%</span>
+      </div>
+    </div>
+
+    <p class="soft-skill-name">Creativity</p>
+    <div class="soft-skill-bar">
+      <div class="soft-skill-fill" style="width: 80%;">
+        <span class="soft-skill-percent">80%</span>
+      </div>
+    </div>
+
+    <p class="soft-skill-name">Adaptability</p>
+    <div class="soft-skill-bar">
+      <div class="soft-skill-fill" style="width: 70%;">
+        <span class="soft-skill-percent">70%</span>
+      </div>
+    </div>
+    <p class="soft-skill-name">Time management</p>
+    <div class="soft-skill-bar">
+      <div class="soft-skill-fill" style="width: 70%;">
+        <span class="soft-skill-percent">70%</span>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+
+  <!-- footer section -->
+  <div class="container">
+  <footer class="footer">
+    <p class="mb-0">
+      Copyright 
+      <script>document.write(new Date().getFullYear())</script> &copy; 
+      <a th:href="@{/}" target="_blank">Tunkarapalli Raghu</a>. 
+      All Rights Reserved.
+    </p>
+    <div class="social-links">
+      <a href="https://github.com/raghavendra-tunkarapalli" class="link" aria-label="github" target="_blank">GH</a>
+      <a href="https://www.linkedin.com/in/raghavendra-tunkarapalli/" class="link" aria-label="linkedin" target="_blank">IN</a>
+    </div>
+  </footer>
+</div>
+
+  <script th:src="@{/js/script.js}"></script>
+</body>
+</html>
