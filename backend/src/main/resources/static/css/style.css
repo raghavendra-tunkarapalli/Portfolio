@@ -42,6 +42,7 @@ body {
    margin-left: 2rem; /* or 5rem if you prefer */
   flex: 1;
 }
+
 /* Hamburger Icon */
 .hamburger {
   display: none;
@@ -82,7 +83,7 @@ body {
   padding: 0.2rem;
   margin: 0.2rem ;
   margin-top : 2.5rem ;
-
+  
 }
 
 /* Hero Container */
