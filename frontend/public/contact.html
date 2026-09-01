@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Form</title>
+</head>
+<body>
+  <!-- Netlify static form crawler definition -->
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
+    <input type="hidden" name="form-name" value="contact" />
+    <input type="hidden" name="bot-field" />
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

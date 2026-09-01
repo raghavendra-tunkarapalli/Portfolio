@@ -51,16 +51,22 @@ export default function Contact() {
         }
       } else {
         // Option B: Netlify Serverless Form Processing
+        const formPayload = new URLSearchParams({
+          'form-name': 'contact',
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }).toString();
+
         const response = await fetch('/', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: encode({
-            'form-name': 'contact',
-            ...formData,
-          }),
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: formPayload,
         });
 
-        if (!response.ok) {
+        if (!response.ok && response.status !== 302 && response.status !== 303) {
           throw new Error(`Netlify form submission status ${response.status}`);
         }
       }
