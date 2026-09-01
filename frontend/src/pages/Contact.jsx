@@ -50,15 +50,18 @@ export default function Contact() {
           throw new Error(errorDetail);
         }
       } else {
-        // Option B: Netlify Forms (Serverless / Zero-Config Cloud Submission)
+        // Option B: Netlify Serverless Form Processing
         const response = await fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: encode({ 'form-name': 'contact', ...formData }),
+          body: encode({
+            'form-name': 'contact',
+            ...formData,
+          }),
         });
 
         if (!response.ok) {
-          throw new Error('Netlify form submission failed. Status: ' + response.status);
+          throw new Error(`Netlify form submission status ${response.status}`);
         }
       }
 
@@ -67,12 +70,18 @@ export default function Contact() {
     } catch (err) {
       console.error('Contact submission failed:', err);
       setErrorMsg(
-        err.message || 'Unable to submit message. You can reach out directly via email below!'
+        'Unable to process form directly. Please use the direct email button below to send your message to theraghuvaran@gmail.com!'
       );
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  const mailtoHref = `mailto:theraghuvaran@gmail.com?subject=${encodeURIComponent(
+    `Portfolio Contact from ${formData.name || 'Visitor'}`
+  )}&body=${encodeURIComponent(
+    `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+  )}`;
 
   return (
     <section id="contact" className="about-section">
@@ -92,21 +101,47 @@ export default function Contact() {
         {errorMsg && (
           <div
             style={{
-              backgroundColor: '#f8d7da',
-              color: '#721c24',
-              padding: '0.75rem 1rem',
-              borderRadius: '0.5rem',
-              marginBottom: '1rem',
-              border: '1px solid #f5c6cb',
-              fontSize: '0.95rem',
+              backgroundColor: '#fef2f2',
+              color: '#991b1b',
+              padding: '1rem',
+              borderRadius: '0.75rem',
+              marginBottom: '1.25rem',
+              border: '1.5px solid #fecaca',
+              fontSize: '0.92rem',
               textAlign: 'center',
             }}
           >
-            ⚠️ {errorMsg}
+            <p style={{ margin: '0 0 0.6rem 0' }}>⚠️ {errorMsg}</p>
+            <a
+              href={mailtoHref}
+              style={{
+                display: 'inline-block',
+                background: '#dc2626',
+                color: '#fff',
+                padding: '0.4rem 0.9rem',
+                borderRadius: '0.4rem',
+                fontWeight: '700',
+                fontSize: '0.85rem',
+                textDecoration: 'none',
+              }}
+            >
+              Send via Email App ↗
+            </a>
           </div>
         )}
 
-        <form onSubmit={handleSubmit}>
+        {/* Netlify Form */}
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+        >
+          {/* Required hidden inputs for Netlify */}
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="bot-field" />
+
           <div className="form-group">
             <label htmlFor="name">Name:</label>
             <input
