@@ -94,7 +94,7 @@ export default function Home() {
               Computer Science Engineering graduate with a strong foundation in programming, Data Structures & Algorithms (DSA), and software development principles. Proficient in Java, Spring Boot, Python, SQL, JavaScript, React.js, HTML, and CSS, with hands-on experience in designing and developing scalable web applications.{' '}
               <Link to="/about">...about</Link>
             </p>
-            <a href="/RaghavendraTunkarapalli.pdf" download className="btn-download">
+            <a href="/TunkarapalliRaghavendra.pdf" download className="btn-download">
               DOWNLOAD RESUME
             </a>
           </div>
