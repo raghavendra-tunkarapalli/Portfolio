@@ -1,15 +1,16 @@
-#
-# Build stage
-#
-FROM maven:3.8.3-openjdk-17 AS build
-COPY . .
-RUN mvn clean install
+# Stage 1: Build Stage
+FROM maven:3.9.6-eclipse-temurin-17 AS build
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package -DskipTests
 
-#
-# Package stage
-#
-FROM eclipse-temurin:17-jdk
-COPY --from=build /target/your-build.jar demo.jar
-# ENV PORT=8080
+# Stage 2: Runtime Stage
+FROM eclipse-temurin:17-jre-alpine
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
+
+ENV PORT=8080
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","demo.jar"]
+
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "app.jar"]

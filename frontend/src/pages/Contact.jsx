@@ -24,8 +24,10 @@ export default function Contact() {
     setErrorMsg('');
     setIsSubmitting(true);
 
+    const apiBase = import.meta.env.VITE_API_BASE_URL || '';
+
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(`${apiBase}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -45,7 +47,7 @@ export default function Contact() {
     } catch (err) {
       console.error('Contact submission failed:', err);
       setErrorMsg(
-        err.message || 'Failed to submit message. Please ensure the backend server is running.'
+        err.message || 'Unable to connect to the backend service. You can reach out directly via email below!'
       );
     } finally {
       setIsSubmitting(false);
