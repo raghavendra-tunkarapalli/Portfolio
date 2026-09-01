@@ -19,27 +19,47 @@ export default function Contact() {
     }));
   };
 
+  const encode = (data) => {
+    return Object.keys(data)
+      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMsg('');
     setIsSubmitting(true);
 
-    const apiBase = import.meta.env.VITE_API_BASE_URL || '';
+    const apiBase = import.meta.env.VITE_API_BASE_URL;
 
     try {
-      const response = await fetch(`${apiBase}/api/contact`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      if (apiBase) {
+        // Option A: Custom Spring Boot Backend REST API
+        const response = await fetch(`${apiBase}/api/contact`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
 
-      const result = await response.json().catch(() => null);
+        const result = await response.json().catch(() => null);
 
-      if (!response.ok) {
-        const errorDetail = result?.message || `Server responded with status ${response.status}`;
-        throw new Error(errorDetail);
+        if (!response.ok) {
+          const errorDetail = result?.message || `Server responded with status ${response.status}`;
+          throw new Error(errorDetail);
+        }
+      } else {
+        // Option B: Netlify Forms (Serverless / Zero-Config Cloud Submission)
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode({ 'form-name': 'contact', ...formData }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Netlify form submission failed. Status: ' + response.status);
+        }
       }
 
       // Successful submission -> Navigate to success page
@@ -47,7 +67,7 @@ export default function Contact() {
     } catch (err) {
       console.error('Contact submission failed:', err);
       setErrorMsg(
-        err.message || 'Unable to connect to the backend service. You can reach out directly via email below!'
+        err.message || 'Unable to submit message. You can reach out directly via email below!'
       );
     } finally {
       setIsSubmitting(false);
